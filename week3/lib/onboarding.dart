@@ -10,17 +10,17 @@ class Onboarding extends StatefulWidget {
 
 class _OnboardingState extends State<Onboarding> {
   int currentIndex = 0;
-  PageController _controller;
+  late PageController controller;
 
   @override
   void initState() {
-    _controller = PageController(initialPage: 0);
+    controller = PageController(initialPage: 0);
     super.initState();
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    controller.dispose();
     super.dispose();
   }
 
@@ -31,7 +31,7 @@ class _OnboardingState extends State<Onboarding> {
         children: [
           Expanded(
             child: PageView.builder(
-              controller: _controller,
+              controller: controller,
               itemCount: contents.length,
               onPageChanged: (int index) {
                 setState(() {
@@ -56,7 +56,7 @@ class _OnboardingState extends State<Onboarding> {
                       ),
                       SizedBox(height: 20),
                       Text(
-                        contents[i].discription,
+                        contents[i].description,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 18,
@@ -94,7 +94,7 @@ class _OnboardingState extends State<Onboarding> {
                     ),
                   );
                 }
-                _controller.nextPage(
+                controller.nextPage(
                   duration: Duration(milliseconds: 100),
                   curve: Curves.bounceIn,
                 );

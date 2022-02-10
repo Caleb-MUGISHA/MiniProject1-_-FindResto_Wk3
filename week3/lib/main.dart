@@ -1,4 +1,3 @@
-import 'dart:html';
 
 import 'package:flutter/material.dart';
 import "package:week3/onboarding.dart";
@@ -11,9 +10,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
 
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.green[800],
-      
-      ),
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.amber),
+        ),
       home: Onboarding()
     );
   }
